@@ -52,7 +52,7 @@ console.log(arr3)
 let totalYears = inventors.reduce(
     (accu,inventor) =>{ return accu + (parseInt(inventor.passed)-parseInt(inventor.year))},
     0);
-console.log(totalYears)
+console.log('Total years:'+totalYears)
 //===============================================================================================================================
 // 5. Sort the inventors by years lived
 let arr4 = inventors.sort((a,b) => (a.passed-a.year)-(b.passed-b.year));
@@ -68,6 +68,7 @@ console.log(arr5.join(', '));
 //===============================================================================================================================
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+// For inventors (object type)
 let arr6 = inventors.sort((a,b)=> {
     let A = a.last.toUpperCase();
     let B = b.last.toUpperCase();
@@ -80,6 +81,26 @@ let arr6 = inventors.sort((a,b)=> {
     }
 });
 console.log(arr6)
+// For people (array type)
+let pp = people.sort((first, second) => {
+
+    let firstParts = first.split(', ');
+    let secondParts = second.split(', ');
+    if(firstParts[1]<secondParts[1]){
+        return 1;
+    }
+    if(firstParts[1]>secondParts[1]){
+        return -1;
+    }
+    if(firstParts[1]==secondParts[1]){
+        return 0;
+    }
+
+});
+
+console.log(pp);
+
+
 
 //===============================================================================================================================
 // 8. Reduce Exercise
